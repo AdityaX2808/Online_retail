@@ -14,7 +14,7 @@ where t.customer_id = orw.customerid :: varchar(20)
 )
 on conflict (customer_id) do nothing;
 
--------- Incrementally load new customers into core dimension table -------
+-------- Incrementally load new customers into core dimension table.-------
 
 insert into wh_core.dim_customer(customer_id , country ,start_date , end_date , current_flag)
 select
